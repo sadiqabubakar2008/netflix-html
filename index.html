@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title (shown on browser tab) -->
+  <title>The Rookie S6 | Now Streaming</title>
+
+  <!-- Description (shows up on Google/social previews) -->
+  <meta name="description" content="Watch The Rookie Season 6, — now streaming in cinematic style. Click 'Watch Now' to stream instantly on Netflix.">
+
+  <!-- Keywords (optional for SEO) -->
+  <meta name="keywords" content="The Rookie, Season 6, Watch Online, Netflix, Streaming, Series">
+
+  <!-- Author (optional) -->
+  <meta name="author" content="Sadiq Shehu">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img src="favicon.png" alt="Logo" class="logo">
+
+  <h1>Now Streaming</h1>
+  <h2>The Rookie - Season 6</h2>
+
+  <div>
+    <a href="https://www.netflix.com/watch/82027952" target="_self" class="watch-btn">
+      ▶ Watch Now
+    </a>
+  </div>
+  <div id="fade-overlay"></div>
+
+  <script>
+    const watchBtn = document.querySelector('.watch-btn');
+    const fadeOverlay = document.getElementById('fade-overlay');
+
+    watchBtn.addEventListener('click', (e) => {
+      e.preventDefault(); // stop instant navigation
+      fadeOverlay.classList.add('active'); // start fade
+      setTimeout(() => {
+        window.open(watchBtn.href, '_blank'); // open Netflix after fade
+      }, 700); // wait 0.7s for fade animation
+    });
+  </script>
+</body>
+</html>
